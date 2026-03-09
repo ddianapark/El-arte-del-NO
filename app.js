@@ -7,10 +7,11 @@ const cardEl = document.querySelector('.card');
 const fortuneShellEl = document.querySelector('.fortune-shell');
 const rainLayerEl = document.getElementById('rainLayer');
 const rejectStampEl = document.getElementById('rejectStamp');
+const buttonExcuse = document.getElementById('button-excuse');
 const defaultButtonLabel = nextPhraseBtn.textContent;
 
 const NAAS_ENDPOINT = 'https://naas.isalman.dev/no';
-const CHIP_LABELS = ['NO', 'NOP', 'NEGADO'];
+const CHIP_LABELS = ['img/perro1.png', 'img/perro3.png', 'img/perro2.png'];
 
 let rainTimeoutId = null;
 let lastDropX = null;
@@ -66,7 +67,7 @@ const fetchNoAsAService = async () => {
 
     return {
         phrase: normalizePhrase(phrase),
-        source: 'by jeesssik'
+        source: 'by dai & jaz'
     };
 };
 
@@ -87,9 +88,9 @@ const spawnNoChip = () => {
         return;
     }
 
-    const chipEl = document.createElement('span');
+    const chipEl = document.createElement('img');
     chipEl.className = 'rain-chip';
-    chipEl.textContent = CHIP_LABELS[Math.floor(Math.random() * CHIP_LABELS.length)];
+    chipEl.src = CHIP_LABELS[Math.floor(Math.random() * CHIP_LABELS.length)];
 
     let xPercent = randomInRange(1, 96);
     if (lastDropX !== null && Math.abs(xPercent - lastDropX) < 12) {
