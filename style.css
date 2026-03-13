@@ -17,7 +17,7 @@ body {
 	place-items: center;
 	padding: 2rem;
 	position: relative;
-	overflow: hidden;
+	overflow-y: auto;
 }
 
 body::before,
@@ -588,4 +588,12 @@ body.is-fetching::after {
 		padding: 1.2rem;
 	}
 
+}
+
+.respuesta li{
+	padding: 0.5rem;
+}
+.respuesta li span{
+	font-weight: 700;
+	color: #7ce4ff;
 }
